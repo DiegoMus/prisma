@@ -1,0 +1,19 @@
+// prisma/schema.prisma
+// prisma/schema.prisma
+generator client {
+    provider = "prisma-client-js"
+  }
+  
+  // Define your database connection
+  datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+  }
+  
+  // Define your data model
+  model User {
+    id    Int      @id @default(autoincrement())
+    name  String
+    lastname String
+  }
+  
