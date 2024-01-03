@@ -1,16 +1,21 @@
+# Version 2, 2.7 
 version: '3.8'
-
+# servios son aplicaciones que se estan dockerizando y se muestran los contenedores
 services:
+#-----------primer contenedor se llama database
   database:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: Secretop
-    ports:
-      - 5432:5432
+    image: postgres # usamos la imagen de postgres si nosotros queremos usa msql lo que hacemos es cambiar la imagen
+    restart: always ## parametro para indicar que siempre intente reinicar el servicio
+    environment: # Se abre el ingreso de parametros esto es diferente para cada imagen
+      POSTGRES_PASSWORD: Secretop #definimos la contrasela del usuario postgres que es como  un root en mysql o sa en sqlserver
 
+    ports: # se define la variaable de puertos el puerto del hosto : el puerto del contendor
+      - 5432:5432
+    
+  
+  #----------segundo contenedor adminer
   adminer:
-    image: adminer
-    restart: always
-    ports:
+    image: adminer  # nombre de la imagen a utilizar
+    restart: always # reiniciar constantemente el contedor
+    ports:   # definir los puertos ppuerto del equipo : puerto de contenedor    
       -  8080:8080
