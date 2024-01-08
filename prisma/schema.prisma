@@ -17,3 +17,8 @@ generator client {
     lastname String
   }
   
+  model gps {
+    id    Int      @id  @default(autoincrement())
+    lat Decimal
+    lng Decimal
+  }
