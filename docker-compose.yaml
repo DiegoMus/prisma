@@ -19,3 +19,11 @@ services:
     restart: always # reiniciar constantemente el contedor
     ports:   # definir los puertos ppuerto del equipo : puerto de contenedor    
       -  8080:8080
+
+
+  grafana:
+    image: grafana/grafana
+    restart: always
+    container_name: monitor
+    ports:
+      - 3005:3000
