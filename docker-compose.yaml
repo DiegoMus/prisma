@@ -20,7 +20,7 @@ services:
     ports:   # definir los puertos ppuerto del equipo : puerto de contenedor    
       -  8080:8080
 
-
+#----------- Tercer contenedor grafana labs
   grafana:
     image: grafana/grafana
     restart: always
